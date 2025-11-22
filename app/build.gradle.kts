@@ -11,9 +11,17 @@ plugins {
 dependencies {
     implementation("org.apache.commons:commons-text")
     implementation(project(":utilities"))
+
+    // Tests
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.4")
 }
 
 application {
     // Define the main class for the application.
     mainClass = "org.example.app.AppKt"
+}
+
+// Use JUnit Platform for tests
+tasks.test {
+    useJUnitPlatform()
 }
