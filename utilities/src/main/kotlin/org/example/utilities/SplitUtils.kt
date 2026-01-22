@@ -7,9 +7,9 @@ import org.example.list.LinkedList
 
 class SplitUtils {
     companion object {
-        fun split(source: String): LinkedList {
+        fun split(source: String): LinkedList<String> {
             var lastFind = 0
-            val result = LinkedList()
+            val result = LinkedList<String>()
 
             var currentFind = source.indexOf(" ", lastFind)
             while (currentFind != -1) {
@@ -29,7 +29,7 @@ class SplitUtils {
             return result
         }
 
-        private fun addIfValid(token: String, list: LinkedList) {
+        private fun addIfValid(token: String, list: LinkedList<String>) {
             if (isTokenValid(token)) {
                 list.add(token)
             }

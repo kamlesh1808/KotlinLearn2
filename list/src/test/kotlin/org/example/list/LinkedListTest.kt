@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Assertions.*
 
 class LinkedListTest {
     @Test fun testConstructor() {
-        val list = LinkedList()
+        val list = LinkedList<String>()
         assertEquals(0, list.size())
     }
 
     @Test fun testAdd() {
-        val list = LinkedList()
+        val list = LinkedList<String>()
 
         list.add("one")
         assertEquals(1, list.size())
@@ -26,7 +26,7 @@ class LinkedListTest {
     }
 
     @Test fun testRemove() {
-        val list = LinkedList()
+        val list = LinkedList<String>()
 
         list.add("one")
         list.add("two")
@@ -40,7 +40,7 @@ class LinkedListTest {
     }
 
     @Test fun testRemoveMissing() {
-        val list = LinkedList()
+        val list = LinkedList<String>()
 
         list.add("one")
         list.add("two")

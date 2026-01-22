@@ -11,13 +11,13 @@ fun main(args: Array<String>) {
 
 
 	var kArray = KArray();
-	kArray.printArray(stringA as Array<Any>)
+	kArray.printArray(stringA)
 
 	var listStr = listOf("seven", "eight", "nine")
 	var listInts = listOf(7, 8, 9)
 
-	kArray.printCollection(listStr as Collection<Any>)
-	kArray.printCollection(listInts as Collection<Any>)
+	kArray.printCollection(listStr)
+	kArray.printCollection(listInts)
 
 
 }

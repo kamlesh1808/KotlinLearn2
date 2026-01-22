@@ -3,10 +3,10 @@
  */
 package org.example.list
 
-class LinkedList {
+class LinkedList<T> {
     private var head: Node? = null
 
-    fun add(element: String) {
+    fun add(element: T) {
         val newNode = Node(element)
 
         val it = tail(head)
@@ -28,12 +28,12 @@ class LinkedList {
         return it
     }
 
-    fun remove(element: String): Boolean {
+    fun remove(element: T): Boolean {
         var result = false
         var previousIt: Node? = null
         var it: Node? = head
         while (!result && it != null) {
-            if (0 == element.compareTo(it.data)) {
+            if (element == it.data) {
                 result = true
                 unlink(previousIt, it)
                 break
@@ -65,7 +65,7 @@ class LinkedList {
         return size
     }
 
-    fun get(idx: Int): String {
+    fun get(idx: Int): T {
         var index = idx
         var it = head
         while (index > 0 && it != null) {
@@ -80,7 +80,7 @@ class LinkedList {
         return it.data
     }
 
-    private data class Node(val data: String) {
+    private inner class Node(val data: T) {
         var next: Node? = null
     }
 }

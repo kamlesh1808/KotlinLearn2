@@ -2,14 +2,14 @@ package kotlinlearn.array
 
 class KArray {
 
-	fun printArray(c: Array<Any>) {
+	fun <T> printArray(c: Array<T>) {
 		println("printArray")
 		for ((i, value) in c.withIndex()) {
 			println("$i, $value")
 		}
 	}
 
-	fun printCollection(c: Collection<Any>) {
+	fun <T> printCollection(c: Collection<T>) {
 		println("printCollection")
 		for ((i, value) in c.withIndex()) {
 			println("$i, $value")

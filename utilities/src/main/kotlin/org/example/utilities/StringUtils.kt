@@ -7,11 +7,11 @@ import org.example.list.LinkedList
 
 class StringUtils {
     companion object {
-        fun join(source: LinkedList): String {
+        fun join(source: LinkedList<String>): String {
             return JoinUtils.join(source)
         }
 
-        fun split(source: String): LinkedList {
+        fun split(source: String): LinkedList<String> {
             return SplitUtils.split(source)
         }
     }
