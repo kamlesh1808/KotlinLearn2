@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Haiku {
 
-  public static void main(String[] args) {
+  static void main(String[] args) {
 
     List<String> haikus =
         Arrays.asList(
@@ -27,14 +27,13 @@ public class Haiku {
 
     int[] haikuStruct = new int[] {5, 7, 5};
 
-    var syllableCounter = new SyllableCounter();
     String[] words = str.split(" ");
 
     int syCounter = 0;
     int structCounter = 0;
 
     for (var w : words) {
-      var sy = syllableCounter.countSyllables(w);
+      var sy = SyllableCounter.countSyllables(w);
       System.out.println(w + " > " + sy);
       syCounter = syCounter + sy;
 
