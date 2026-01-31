@@ -18,10 +18,12 @@ dependencies {
 
 
     implementation("dev.langchain4j:langchain4j-open-ai:1.10.0")
+    implementation("dev.langchain4j:langchain4j-anthropic:1.10.0")
     implementation(platform("dev.langchain4j:langchain4j-bom:1.10.0"))
     
     // Logging
     implementation("ch.qos.logback:logback-classic:1.5.0")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
 }
 
 application {
