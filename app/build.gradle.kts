@@ -6,6 +6,7 @@
 
 plugins {
     id("buildlogic.kotlin-application-conventions")
+    id("io.freefair.lombok") version "9.2.0"
 }
 
 dependencies {
@@ -14,6 +15,13 @@ dependencies {
 
     // Tests
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.4")
+
+
+    implementation("dev.langchain4j:langchain4j-open-ai:1.10.0")
+    implementation(platform("dev.langchain4j:langchain4j-bom:1.10.0"))
+    
+    // Logging
+    implementation("ch.qos.logback:logback-classic:1.5.0")
 }
 
 application {
