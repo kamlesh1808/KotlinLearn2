@@ -1,5 +1,50 @@
-# Ignore Gradle project-specific cache directory
+# Gradle
+.gradle/
+build/
 .gradle
+gradlew
+gradlew.bat
 
-# Ignore Gradle build output directory
-build
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Kotlin
+.kotlin/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+*.swp
+*.swo
+
+# IDE specific files
+*.class
+*.jar
+*.war
+*.nar
+*.zip
+*.tar.gz
+*.rar
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Misc
+.env
+.env.local
+*.log
+node_modules/
