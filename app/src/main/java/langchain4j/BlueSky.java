@@ -9,7 +9,7 @@ import static dev.langchain4j.model.openai.OpenAiChatModelName.GPT_5_NANO;
 @Slf4j
 public class BlueSky {
 
-  static void main() {
+  public static void main(String[] args) {
     ChatModel model =
         OpenAiChatModel.builder()
             .apiKey(System.getenv("OPENAI_API_KEY"))

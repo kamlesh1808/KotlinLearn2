@@ -17,11 +17,12 @@ fun <K : Comparable<K>, V> Map<K, V>.sortByKeyAsc(): Map<K, V> {
 }
 
 fun main() {
-    val sample = mapOf(
-        "Alice" to 3,
-        "Bob" to 5,
-        "Charlie" to 1
-    )
+    val sample =
+        mapOf(
+            "Alice" to 3,
+            "Bob" to 5,
+            "Charlie" to 1,
+        )
 
     // No need to instantiate a helper class
     val sortedByValue = sample.sortByValueDesc()
