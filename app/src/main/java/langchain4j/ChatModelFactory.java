@@ -1,11 +1,13 @@
 package langchain4j;
 
+import dev.langchain4j.model.anthropic.AnthropicChatModel;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.openai.OpenAiChatModel;
-import dev.langchain4j.model.anthropic.AnthropicChatModel;
-import static dev.langchain4j.model.openai.OpenAiChatModelName.GPT_5_NANO;
+
 import java.util.EnumMap;
 import java.util.Map;
+
+import static dev.langchain4j.model.openai.OpenAiChatModelName.GPT_5_NANO;
 
 public class ChatModelFactory {
 
@@ -13,10 +15,6 @@ public class ChatModelFactory {
 
   public static ChatModel getChatModel(ChatModelProvider provider) {
     return cache.computeIfAbsent(provider, ChatModelFactory::createChatModel);
-  }
-
-  public static ChatModel getChatModel(String provider) {
-    return getChatModel(ChatModelProvider.fromString(provider));
   }
 
   private static ChatModel createChatModel(ChatModelProvider provider) {
