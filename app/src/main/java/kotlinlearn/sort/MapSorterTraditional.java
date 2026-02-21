@@ -8,9 +8,8 @@ public class MapSorterTraditional {
     // Convert map entries into a list
     var entryList = new ArrayList<>(map.entrySet());
 
-    // Sort the list by value in descending order using a lambda
+    // Sort the list by value in descending order using a lambdadf
     entryList.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
-
 
     // Preserve order in a LinkedHashMap
     var sortedMap = new LinkedHashMap<String, Integer>();

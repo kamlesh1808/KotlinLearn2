@@ -1,18 +1,25 @@
 plugins {
-    id("com.diffplug.spotless") version "6.25.0" apply false
+    id("java")
+    id("com.diffplug.spotless") version "8.2.1"
 }
 
 allprojects {
+
     repositories {
         mavenCentral()
         gradlePluginPortal()
     }
-}
 
-subprojects {
     apply(plugin = "com.diffplug.spotless")
-    
+
+
     configure<com.diffplug.gradle.spotless.SpotlessExtension> {
+        java {
+            googleJavaFormat()
+            importOrder()
+            removeUnusedImports()
+        }
+
         kotlin {
             target("src/**/*.kt")
             ktlint("1.2.1").editorConfigOverride(
@@ -20,7 +27,7 @@ subprojects {
             )
         }
     }
-    
+
     // Run spotlessApply before assemble
     tasks.named("assemble").configure {
         dependsOn("spotlessApply")

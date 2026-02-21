@@ -1,10 +1,9 @@
 package kotlinlearn.sort;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 public class MapSorterTraditionalTest {
 
@@ -21,4 +20,3 @@ public class MapSorterTraditionalTest {
     assertEquals(Arrays.asList("Bob", "Alice", "Charlie"), keys);
   }
 }
-

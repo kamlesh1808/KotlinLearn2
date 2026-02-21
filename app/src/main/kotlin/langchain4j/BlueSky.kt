@@ -6,10 +6,10 @@ import mu.KotlinLogging
 private val log = KotlinLogging.logger {}
 
 fun main() {
-  val model: ChatModel = getChatModel(ChatProvider.OPENAI)
+    val model: ChatModel = getChatModel(ChatProvider.OPENAI)
 
-  // Send a user message and get the response
-  val response = model.chat("Why is the sky blue?")
+    // Send a user message and get the response
+    val response = model.chat("Why is the sky blue?")
 
-  log.info { response }
+    log.info { response }
 }

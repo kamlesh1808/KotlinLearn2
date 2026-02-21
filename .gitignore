@@ -48,3 +48,6 @@ pom.xml.next
 .env.local
 *.log
 node_modules/
+/.idea/
+/.kotlin/
+/.vscode/

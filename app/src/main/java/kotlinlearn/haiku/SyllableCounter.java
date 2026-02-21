@@ -37,9 +37,9 @@ public class SyllableCounter {
     }
 
     // Adjust for silent "e" at the end
-//    if (word.endsWith("e") && syllableCount > 1) {
-//      syllableCount--;
-//    }
+    //    if (word.endsWith("e") && syllableCount > 1) {
+    //      syllableCount--;
+    //    }
 
     // Ensure at least 1 syllable
     return Math.max(syllableCount, 1);
