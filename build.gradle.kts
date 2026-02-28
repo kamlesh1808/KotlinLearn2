@@ -1,17 +1,17 @@
 plugins {
     id("java")
-    id("com.diffplug.spotless") version "8.2.1"
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.lombok) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
 }
 
 allprojects {
-
     repositories {
         mavenCentral()
         gradlePluginPortal()
     }
 
     apply(plugin = "com.diffplug.spotless")
-
 
     configure<com.diffplug.gradle.spotless.SpotlessExtension> {
         java {
@@ -22,14 +22,41 @@ allprojects {
 
         kotlin {
             target("src/**/*.kt")
-            ktlint("1.2.1").editorConfigOverride(
+            ktlint(libs.versions.ktlint.get()).editorConfigOverride(
                 mapOf("indent_size" to 4, "ij_kotlin_packages_import_layout" to "*")
             )
         }
     }
 
-    // Run spotlessApply before assemble
     tasks.named("assemble").configure {
         dependsOn("spotlessApply")
     }
+}
+
+subprojects {
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "java-library")
+
+    dependencies {
+        constraints {
+            add("implementation", rootProject.libs.commons.text)
+        }
+
+        add("testImplementation", rootProject.libs.junit.jupiter)
+        add("testRuntimeOnly", rootProject.libs.junit.platform.launcher)
+    }
+
+    configure<JavaPluginExtension> {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(rootProject.libs.versions.java.get().toInt())
+        }
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+    }
+}
+
+configure(listOf(project(":app"))) {
+    apply(plugin = "application")
 }
